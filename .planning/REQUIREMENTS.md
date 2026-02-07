@@ -132,9 +132,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SCORE-03 | Phase 4 | Complete |
 | SCORE-04 | Phase 4 | Complete |
 | SCORE-05 | Phase 4 | Complete |
-| VIZ-01 | Phase 6 | Pending |
-| VIZ-02 | Phase 6 | Pending |
-| VIZ-03 | Phase 6 | Pending |
+| VIZ-01 | Phase 6 | Complete |
+| VIZ-02 | Phase 6 | Complete |
+| VIZ-03 | Phase 6 | Complete |
 | SUGGEST-01 | Phase 5 | Complete |
 | SUGGEST-02 | Phase 5 | Complete |
 | SUGGEST-03 | Phase 5 | Complete |
@@ -146,8 +146,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | UI-05 | Phase 2 | Complete |
 | UI-06 | Phase 1 | Complete |
 | DEPLOY-01 | Phase 1 | Complete |
-| DEPLOY-02 | Phase 6 | Pending |
-| DEPLOY-03 | Phase 6 | Pending |
+| DEPLOY-02 | Phase 6 | Complete |
+| DEPLOY-03 | Phase 6 | Complete |
 
 **Coverage:**
 - v1 requirements: 36 total
@@ -156,4 +156,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-07*
-*Last updated: 2026-02-07 after Phase 5 completion*
+*Last updated: 2026-02-07 after Phase 6 completion — all 36 v1 requirements complete*
