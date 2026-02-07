@@ -3,6 +3,7 @@
 import { useOptimistic, useTransition } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toggleWorkItem } from "@/lib/actions";
+import { useCelebration } from "@/lib/hooks/use-celebration";
 
 type WorkItemRowProps = {
   id: number;
@@ -20,11 +21,15 @@ export function WorkItemRow({
   const [optimisticCompleted, setOptimisticCompleted] =
     useOptimistic(isCompleted);
   const [isPending, startTransition] = useTransition();
+  const celebrate = useCelebration();
 
   function handleToggle() {
     startTransition(async () => {
       setOptimisticCompleted(!optimisticCompleted);
-      await toggleWorkItem(id);
+      const result = await toggleWorkItem(id);
+      if (result?.weekendJustCompleted) {
+        celebrate();
+      }
     });
   }
 

@@ -22,7 +22,7 @@ export async function toggleWorkItem(itemId: number) {
     .where(eq(workItems.id, id))
     .returning();
 
-  if (!updated) return;
+  if (!updated) return { weekendJustCompleted: false };
 
   // Derive weekend completion from core items
   const allItems = await db.query.workItems.findMany({
@@ -31,6 +31,15 @@ export async function toggleWorkItem(itemId: number) {
   const coreItems = allItems.filter((item) => !item.isAdvanced);
   const allCoreCompleted =
     coreItems.length > 0 && coreItems.every((item) => item.isCompleted);
+
+  // Check if weekend was already completed before this toggle
+  const [weekend] = await db
+    .select({ completedAt: weekends.completedAt })
+    .from(weekends)
+    .where(eq(weekends.id, updated.weekendId));
+
+  const wasAlreadyCompleted = weekend?.completedAt !== null;
+  const weekendJustCompleted = allCoreCompleted && !wasAlreadyCompleted;
 
   // Update weekend completedAt based on core item status
   await db
@@ -44,6 +53,8 @@ export async function toggleWorkItem(itemId: number) {
   // Revalidate both pages
   revalidatePath("/");
   revalidatePath(`/weekend/${updated.weekendId}`);
+
+  return { weekendJustCompleted };
 }
 
 // --- Save Notes ---
