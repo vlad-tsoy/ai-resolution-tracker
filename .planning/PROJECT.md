@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A personal web app that tracks progress through the 10-Weekend AI Resolution program. Each weekend has a project with a clear deliverable, and this tracker lets you check off completions, take notes, see overall progress, and get suggestions on which weekend to tackle next. Clean, minimal, Apple-inspired design deployed on Vercel with cloud persistence.
+A personal web app that tracks progress through the 10-Weekend AI Resolution program. Features interactive checkboxes with optimistic UI, auto-saving markdown notes, weekly scorecards (1-5 ratings + Yes/No), intelligent next-weekend suggestions based on category dependencies, confetti celebrations on completion, spring-animated progress bar, staggered card animations, and score trend visualization. Built with Next.js 16, Neon Postgres, Drizzle ORM, and shadcn/ui. Deployed on Vercel.
 
 ## Core Value
 
@@ -12,20 +12,20 @@ A single place to see where I am in the 10-weekend program and what to do next �
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Display all 10 weekends with names, deliverables, and completion status — v1.0
+- ✓ Completion checkboxes with optimistic UI and auto-completion logic — v1.0
+- ✓ Auto-saving notes with markdown preview — v1.0
+- ✓ Overall progress bar with spring animation — v1.0
+- ✓ "Suggest next weekend" with category dependency order — v1.0
+- ✓ Weekend detail view with full info and advanced modifiers — v1.0
+- ✓ Weekly scorecard (Outcome Quality, Time Saved, Repeatability, Use Again) — v1.0
+- ✓ Cloud-persisted data via Neon Postgres — v1.0
+- ✓ Deployed live on Vercel — v1.0
+- ✓ Apple-style minimalist design with Motion animations — v1.0
 
 ### Active
 
-- [ ] Display all 10 weekends with their project names, deliverables, and "done when" criteria
-- [ ] Completion checkboxes — mark weekends as done
-- [ ] Notes field per weekend — capture reflections, links, learnings
-- [ ] Overall progress bar showing completion across all 10 weekends
-- [ ] "Suggest next weekend" logic — recommend which weekend to tackle based on completion state and dependencies
-- [ ] Weekend detail view — see full info (the work, advanced modifiers, why it matters)
-- [ ] Weekly scorecard — rate Outcome Quality, Time Saved, Repeatability, Use Again per weekend
-- [ ] Cloud-persisted data — accessible from any device
-- [ ] Deployed live on Vercel
-- [ ] Apple-style minimalist design — clean typography, generous whitespace, subtle animations
+(None — v1.0 complete. Define in next milestone.)
 
 ### Out of Scope
 
@@ -37,38 +37,36 @@ A single place to see where I am in the 10-weekend program and what to do next �
 
 ## Context
 
-The tracker is the Weekend 1 project from the "10-Weekend AI Resolution" PDF — a self-guided AI fluency program for 2026. The program has a retro atomic-age visual identity in the PDF, but the tracker itself should be modern and minimal (Apple aesthetic). The 10 weekends are:
+Shipped v1.0 with 3,538 lines of TypeScript/TSX across 6 phases and 14 plans.
 
-1. **The Vibe Code Kickoff** — Build your resolution tracker (this project)
-2. **The Model Mapping Project** — Build your personal AI topography
-3. **The Deep Research Sprint** — Let AI do a week's research in an afternoon
-4. **The Analysis Project** — Turn messy data into actual decisions
-5. **The Visual Reasoning Project** — Make AI see and think
-6. **The Information Pipeline** — Build your NotebookLM + Gamma stack
-7. **The First Automation** — Build your content distribution machine
-8. **The Second Automation** — Build your productivity workflow
-9. **The Context Engineering Project** — Build your personal AI operating system
-10. **The AI-Powered Build** — Build something with AI inside it
+**Stack:** Next.js 16.1.6 + React 19.2.4 + Neon Postgres + Drizzle ORM 0.45.1 + shadcn/ui (Nova/Zinc) + Tailwind CSS 4.1.18 + Motion 12.33.0 + Recharts 2.15.4 + canvas-confetti 1.9.4
 
-Each weekend has: a deliverable, core work steps, advanced modifiers, a "why it matters" rationale, and a "done when" criterion.
+**Database:** 4 tables (weekends, work_items, done_criteria, scorecard_ratings) with 11 seeded weekends, 80 work items, 11 done criteria
 
-There's also a Bonus Weekend: "The Agent Exploration" (Run the Agent Evaluation Gauntlet).
+**Production URL:** https://ai-resolution.vercel.app
+**Repository:** https://github.com/vlad-tsoy/ai-resolution-tracker
 
 ## Constraints
 
-- **Stack**: Next.js + React on Vercel — matches deployment target
-- **Database**: Cloud DB (Supabase, PlanetScale, or similar) — data persists across devices
-- **Design**: Apple-inspired minimalism — no retro styling, no clutter
+- **Stack**: Next.js 16 + Neon Postgres + Drizzle ORM on Vercel
+- **Database**: Neon Postgres with @neondatabase/serverless HTTP driver
+- **Design**: Apple-inspired minimalism — Inter font, zinc palette, subtle Motion animations
 - **Scope**: Personal use only — no auth needed, single user
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Apple minimalism over retro PDF style | User preference for clean modern aesthetic | — Pending |
-| Cloud DB over localStorage | Access from any device, data safety | — Pending |
-| Vercel deployment | Free tier, great DX for Next.js | — Pending |
-| No auth for v1 | Single user, reduces complexity | — Pending |
+| Apple minimalism over retro PDF style | User preference for clean modern aesthetic | ✓ Good |
+| Neon Postgres over Supabase | Scale-to-zero, no auto-pause, Vercel partner | ✓ Good |
+| Drizzle ORM over Prisma | 7KB bundle, zero cold start, serverless-native | ✓ Good |
+| Vercel deployment | Free tier, great DX for Next.js | ✓ Good |
+| No auth for v1 | Single user, reduces complexity | ✓ Good |
+| Server-first architecture | Server Components + Server Actions from Phase 1 | ✓ Good |
+| shadcn/ui Nova style + Zinc | Compact layout, neutral palette, Apple feel | ✓ Good |
+| Motion for animations | Spring physics, stagger, page transitions | ✓ Good |
+| canvas-confetti for celebration | Lightweight, zero deps, reduced-motion support | ✓ Good |
+| Recharts via shadcn/ui chart | Grouped bar chart for score trends | ✓ Good |
 
 ---
-*Last updated: 2026-02-07 after initialization*
+*Last updated: 2026-02-07 after v1.0 milestone*
