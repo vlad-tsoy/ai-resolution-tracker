@@ -1,13 +1,17 @@
-import { getWeekendsWithProgress } from "@/lib/queries";
+import { getWeekendsWithProgress, getScorecardAverages } from "@/lib/queries";
 import { getSuggestedWeekend } from "@/lib/suggestions";
 import { ProgressOverview } from "@/components/weekend/progress-overview";
 import { SuggestedWeekendBanner } from "@/components/weekend/suggested-weekend-banner";
 import { WeekendGrid } from "@/components/weekend/weekend-grid";
+import { ScoreTrendsSection } from "@/components/weekend/score-trends-section";
 
 export const dynamic = "force-dynamic";
 
 export default async function OverviewPage() {
-  const weekends = await getWeekendsWithProgress();
+  const [weekends, scoreData] = await Promise.all([
+    getWeekendsWithProgress(),
+    getScorecardAverages(),
+  ]);
 
   const mainWeekends = weekends.filter((w) => !w.isBonus);
 
@@ -35,6 +39,7 @@ export default async function OverviewPage() {
         />
       )}
       <WeekendGrid weekends={weekends} />
+      {scoreData.length > 0 && <ScoreTrendsSection data={scoreData} />}
     </main>
   );
 }
