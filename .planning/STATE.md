@@ -5,33 +5,34 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** A single place to see where I am in the 10-weekend program and what to do next -- simple enough that I actually use it.
-**Current focus:** Phase 1 complete. Ready for Phase 2: Weekend Overview.
+**Current focus:** Phase 2 in progress: Weekend Overview. Plan 01 complete, ready for Plan 02 (detail page).
 
 ## Current Position
 
-Phase: 1 of 6 (Foundation & Data Layer) -- COMPLETE
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-02-07 -- Completed 01-03-PLAN.md (Design system, landing page, Vercel deployment)
+Phase: 2 of 6 (Weekend Overview)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-02-07 -- Completed 02-01-PLAN.md (Overview page with category grouping and progress bar)
 
-Progress: [██░░░░░░░░░░░░░] 20% (3/15 plans)
+Progress: [████░░░░░░░░░░░] 27% (4/15 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: ~4 min
-- Total execution time: ~12 min
+- Total execution time: ~15 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation-data-layer | 3/3 | ~12 min | ~4 min |
+| 02-weekend-overview | 1/2 | ~3 min | ~3 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01, 01-02, 01-03
-- Trend: --
+- Last 5 plans: 01-01, 01-02, 01-03, 02-01
+- Trend: consistent ~3-4 min/plan
 
 *Updated after each plan completion*
 
@@ -56,6 +57,11 @@ Recent decisions affecting current work:
 - [01-03]: Inter font replaces Geist for cleaner Apple-like typography
 - [01-03]: Weekend list grouped by category with dividers, zero-padded numbers
 - [01-03]: DATABASE_URL configured on Vercel for production and preview environments
+- [02-01]: Drizzle relational query API (db.query.*) with selective columns for overview efficiency
+- [02-01]: WeekendWithWorkItems type derived from query return type (no separate types file)
+- [02-01]: Status derived from work items in component (completed/in_progress/not_started)
+- [02-01]: Phase 1 landing page removed, replaced with (dashboard) route group overview
+- [02-01]: Skeleton card counts match actual category sizes to minimize layout shift
 
 ### Pending Todos
 
@@ -70,9 +76,11 @@ None.
 - **Production URL:** https://ai-resolution.vercel.app
 - **Database:** Neon Postgres with 11 weekends, 80 work items, 11 done criteria
 - **Design system:** Apple-minimalist tokens in src/app/globals.css
+- **Query layer:** src/lib/queries.ts (getWeekendsWithProgress, getWeekendById)
+- **Overview page:** src/app/(dashboard)/page.tsx with loading skeleton
 
 ## Session Continuity
 
-Last session: 2026-02-07T16:09Z
-Stopped at: Completed 01-03-PLAN.md -- Phase 1 complete
+Last session: 2026-02-07T19:04Z
+Stopped at: Completed 02-01-PLAN.md -- Overview page with progress and categories
 Resume file: None
