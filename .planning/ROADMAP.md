@@ -12,7 +12,7 @@ This roadmap delivers a personal 10-weekend AI Resolution tracker from empty rep
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & Data Layer** - Project scaffolding, Neon Postgres schema, seed data, design system, initial Vercel deploy
+- [x] **Phase 1: Foundation & Data Layer** - Project scaffolding, Neon Postgres schema, seed data, design system, initial Vercel deploy
 - [ ] **Phase 2: Weekend Overview** - Read path displaying all weekends, detail views, progress bar, category grouping, responsive layout
 - [ ] **Phase 3: Core Interactions** - Write path with completion checkboxes, auto-saving notes, and weekend completion logic
 - [ ] **Phase 4: Weekly Scorecard** - Rating system with mixed input types for evaluating completed weekends
@@ -33,9 +33,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Project scaffolding, Drizzle + Neon setup, database schema, push to Neon
-- [ ] 01-02-PLAN.md -- Seed script with all 11 weekends of actual PDF content
-- [ ] 01-03-PLAN.md -- Apple-inspired design system, landing page, Vercel deployment
+- [x] 01-01-PLAN.md -- Project scaffolding, Drizzle + Neon setup, database schema, push to Neon
+- [x] 01-02-PLAN.md -- Seed script with all 11 weekends of actual PDF content
+- [x] 01-03-PLAN.md -- Apple-inspired design system, landing page, Vercel deployment
 
 ### Phase 2: Weekend Overview
 **Goal**: Users can browse all 10 weekends, see their current progress, and drill into full weekend details -- the complete read path
@@ -123,7 +123,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Data Layer | 0/3 | Not started | - |
+| 1. Foundation & Data Layer | 3/3 | Complete | 2026-02-07 |
 | 2. Weekend Overview | 0/2 | Not started | - |
 | 3. Core Interactions | 0/3 | Not started | - |
 | 4. Weekly Scorecard | 0/2 | Not started | - |
@@ -132,4 +132,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 ---
 *Roadmap created: 2026-02-07*
-*Last updated: 2026-02-07*
+*Last updated: 2026-02-07 -- Phase 1 complete*
