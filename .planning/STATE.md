@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** A single place to see where I am in the 10-weekend program and what to do next -- simple enough that I actually use it.
-**Current focus:** Phase 5 in progress: Suggestion engine built (pure function + banner). Ready for animation and polish plans (05-02, 05-03).
+**Current focus:** Phase 5 in progress: Suggestion engine + celebration confetti complete. Ready for micro-animations plan (05-03).
 
 ## Current Position
 
 Phase: 5 of 6 (Suggestion Engine & Polish)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-02-07 -- Completed 05-01-PLAN.md (Suggestion Engine & Banner)
+Last activity: 2026-02-07 -- Completed 05-02-PLAN.md (Completion Celebration)
 
-Progress: [███████████░░░░] 71% (10/14 plans)
+Progress: [███████████░░░] 79% (11/14 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
+- Total plans completed: 11
 - Average duration: ~3 min
-- Total execution time: ~30 min
+- Total execution time: ~32 min
 
 **By Phase:**
 
@@ -31,10 +31,10 @@ Progress: [███████████░░░░] 71% (10/14 plans)
 | 02-weekend-overview | 2/2 | ~5 min | ~2.5 min |
 | 03-core-interactions | 2/2 | ~4 min | ~2 min |
 | 04-weekly-scorecard | 2/2 | ~5 min | ~2.5 min |
-| 05-suggestion-engine-polish | 1/3 | ~2 min | ~2 min |
+| 05-suggestion-engine-polish | 2/3 | ~4 min | ~2 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-02, 04-01, 04-02, 05-01
+- Last 5 plans: 04-01, 04-02, 05-01, 05-02
 - Trend: consistent ~2 min/plan
 
 *Updated after each plan completion*
@@ -88,6 +88,9 @@ Recent decisions affecting current work:
 - [05-01]: getSuggestedWeekend returns full WeekendWithWorkItems type for simpler integration
 - [05-01]: SuggestedWeekendBanner is a Server Component (no use client) -- static markup with Link
 - [05-01]: CATEGORY_ORDER constant local to suggestions.ts, not shared with weekend-grid.tsx
+- [05-02]: Dynamic import of canvas-confetti for SSR safety (no document is not defined errors)
+- [05-02]: Check wasAlreadyCompleted before updating completedAt to detect transition accurately
+- [05-02]: Server Action return values pattern: returning structured data for client-side effects
 
 ### Pending Todos
 
@@ -104,17 +107,19 @@ None.
 - **Design system:** Apple-minimalist tokens in src/app/globals.css
 - **Query layer:** src/lib/queries.ts (getWeekendsWithProgress, getWeekendById with scorecardRatings)
 - **Suggestion engine:** src/lib/suggestions.ts (getSuggestedWeekend pure function)
-- **Mutation layer:** src/lib/actions.ts (toggleWorkItem, saveNotes, saveRating, saveScorecardNotes)
+- **Mutation layer:** src/lib/actions.ts (toggleWorkItem returning weekendJustCompleted, saveNotes, saveRating, saveScorecardNotes)
 - **Debounce hook:** src/lib/hooks/use-debounce.ts (useDebouncedCallback)
+- **Celebration hook:** src/lib/hooks/use-celebration.ts (useCelebration with dynamic canvas-confetti import)
 - **Overview page:** src/app/(dashboard)/page.tsx with suggestion banner and loading skeleton
 - **Detail page:** src/app/(dashboard)/weekend/[id]/page.tsx with loading skeleton and 404 handling
 - **Detail components:** src/components/weekend/weekend-detail.tsx (Server), work-item-list.tsx (Client), work-item-row.tsx (Client), notes-editor.tsx (Client)
 - **Suggestion banner:** src/components/weekend/suggested-weekend-banner.tsx (Server)
 - **Scorecard components:** rating-scale.tsx, use-again-toggle.tsx, scorecard-notes-editor.tsx, scorecard-section.tsx (all Client)
 - **UI components:** badge, card, progress, skeleton, checkbox, textarea, toggle-group, switch, label
+- **Animation deps:** motion@12.33.0 (ready for Plan 03), canvas-confetti@1.9.4 (used in celebration)
 
 ## Session Continuity
 
 Last session: 2026-02-07T21:15Z
-Stopped at: Completed 05-01-PLAN.md -- Suggestion Engine & Banner
+Stopped at: Completed 05-02-PLAN.md -- Completion Celebration (Phase 5 plan 2 of 3)
 Resume file: None
