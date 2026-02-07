@@ -50,8 +50,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md -- Query layer, overview page with category-grouped grid, progress bar, weekend cards, skeleton loading
-- [ ] 02-02-PLAN.md -- Weekend detail page with full info display, back navigation, 404 handling, skeleton loading
+- [x] 02-01-PLAN.md -- Query layer, overview page with category-grouped grid, progress bar, weekend cards, skeleton loading
+- [x] 02-02-PLAN.md -- Weekend detail page with full info display, back navigation, 404 handling, skeleton loading
 
 ### Phase 3: Core Interactions
 **Goal**: Users can track their progress by checking off work items and capturing reflections -- the core CRUD loop that makes the app useful
@@ -123,7 +123,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Data Layer | 3/3 | Complete | 2026-02-07 |
-| 2. Weekend Overview | 0/2 | Not started | - |
+| 2. Weekend Overview | 2/2 | Complete | 2026-02-07 |
 | 3. Core Interactions | 0/2 | Not started | - |
 | 4. Weekly Scorecard | 0/2 | Not started | - |
 | 5. Suggestion Engine & Polish | 0/3 | Not started | - |
@@ -131,4 +131,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 ---
 *Roadmap created: 2026-02-07*
-*Last updated: 2026-02-07 -- Phase 1 complete*
+*Last updated: 2026-02-07 -- Phase 2 complete*
