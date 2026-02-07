@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** A single place to see where I am in the 10-weekend program and what to do next -- simple enough that I actually use it.
-**Current focus:** Phase 6 in progress: Error boundaries and production hardening shipped. Chart visualization (06-01) pending.
+**Current focus:** All phases complete. Score trends chart, error boundaries, and full production build shipped.
 
 ## Current Position
 
 Phase: 6 of 6 (Visualization & Production Hardening)
-Plan: 2 of 2 in current phase (06-01 pending)
-Status: In progress
-Last activity: 2026-02-07 -- Completed 06-02-PLAN.md (Error Boundaries & Production Build)
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-02-07 -- Completed 06-01-PLAN.md (Score Trends Visualization)
 
-Progress: [█████████████░] 93% (13/14 plans)
+Progress: [██████████████] 100% (14/14 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 13
+- Total plans completed: 14
 - Average duration: ~3 min
-- Total execution time: ~34 min
+- Total execution time: ~38 min
 
 **By Phase:**
 
@@ -32,11 +32,11 @@ Progress: [█████████████░] 93% (13/14 plans)
 | 03-core-interactions | 2/2 | ~4 min | ~2 min |
 | 04-weekly-scorecard | 2/2 | ~5 min | ~2.5 min |
 | 05-suggestion-engine-polish | 3/3 | ~5 min | ~1.7 min |
-| 06-visualization-production-hardening | 1/2 | ~1 min | ~1 min |
+| 06-visualization-production-hardening | 2/2 | ~5 min | ~2.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 05-01, 05-02, 05-03, 06-02
-- Trend: consistent ~1-2 min/plan
+- Last 5 plans: 05-02, 05-03, 06-02, 06-01
+- Trend: consistent ~2-4 min/plan
 
 *Updated after each plan completion*
 
@@ -99,6 +99,10 @@ Recent decisions affecting current work:
 - [06-02]: Hardcoded zinc colors in global-error.tsx since CSS variables may not be available when root layout errors
 - [06-02]: not-found.tsx as Server Component (no use client) since it needs no interactivity
 - [06-02]: useEffect error logging in error boundaries for debugging without exposing raw errors to users
+- [06-01]: Client Component wrapper (score-trends-section.tsx) for next/dynamic ssr:false -- Next.js 16 Turbopack disallows ssr:false in Server Components
+- [06-01]: Drizzle SQL builder API (db.select().from()) for getScorecardAverages -- relational API does not support avg()/groupBy
+- [06-01]: use_again excluded from chart -- binary 0/1 criterion does not belong on 1-5 rating scale
+- [06-01]: Promise.all for parallel data fetching -- weekends + scorecard averages fetched concurrently
 
 ### Pending Todos
 
@@ -113,12 +117,12 @@ None.
 - **Production URL:** https://ai-resolution.vercel.app
 - **Database:** Neon Postgres with 11 weekends, 80 work items, 11 done criteria, unique constraint on scorecard_ratings
 - **Design system:** Apple-minimalist tokens in src/app/globals.css
-- **Query layer:** src/lib/queries.ts (getWeekendsWithProgress, getWeekendById with scorecardRatings)
+- **Query layer:** src/lib/queries.ts (getWeekendsWithProgress, getWeekendById, getScorecardAverages)
 - **Suggestion engine:** src/lib/suggestions.ts (getSuggestedWeekend pure function)
 - **Mutation layer:** src/lib/actions.ts (toggleWorkItem returning weekendJustCompleted, saveNotes, saveRating, saveScorecardNotes)
 - **Debounce hook:** src/lib/hooks/use-debounce.ts (useDebouncedCallback)
 - **Celebration hook:** src/lib/hooks/use-celebration.ts (useCelebration with dynamic canvas-confetti import)
-- **Overview page:** src/app/(dashboard)/page.tsx with suggestion banner and loading skeleton
+- **Overview page:** src/app/(dashboard)/page.tsx with suggestion banner, loading skeleton, and score trends chart
 - **Detail page:** src/app/(dashboard)/weekend/[id]/page.tsx with loading skeleton and 404 handling
 - **Page transitions:** src/app/(dashboard)/template.tsx (enter-only fade+slide via motion)
 - **Error boundaries:** src/app/(dashboard)/error.tsx (dashboard), src/app/(dashboard)/weekend/[id]/error.tsx (detail), src/app/global-error.tsx (root)
@@ -126,12 +130,15 @@ None.
 - **Detail components:** src/components/weekend/weekend-detail.tsx (Server), work-item-list.tsx (Client), work-item-row.tsx (Client), notes-editor.tsx (Client)
 - **Suggestion banner:** src/components/weekend/suggested-weekend-banner.tsx (Server)
 - **Scorecard components:** rating-scale.tsx, use-again-toggle.tsx, scorecard-notes-editor.tsx, scorecard-section.tsx (all Client)
+- **Score trends chart:** score-trends-chart.tsx (Client, recharts grouped bar), score-trends-section.tsx (Client wrapper for lazy loading)
+- **Chart utilities:** src/components/ui/chart.tsx (shadcn/ui ChartContainer, ChartConfig, ChartTooltip, ChartLegend)
 - **Animated components:** progress-overview.tsx (spring bar), category-section.tsx (stagger), weekend-grid.tsx (bonus fade)
-- **UI components:** badge, card, progress, skeleton, checkbox, textarea, toggle-group, switch, label
+- **UI components:** badge, card, chart, progress, skeleton, checkbox, textarea, toggle-group, switch, label
 - **Animation deps:** motion@12.33.0 (spring bar, stagger cards, page transitions), canvas-confetti@1.9.4 (celebration)
+- **Chart deps:** recharts@2.15.4 (grouped bar chart via shadcn/ui chart component)
 
 ## Session Continuity
 
-Last session: 2026-02-07T21:59Z
-Stopped at: Completed 06-02-PLAN.md -- Error Boundaries & Production Build (Plan 2 of 2 in Phase 6)
+Last session: 2026-02-07T22:01Z
+Stopped at: Completed 06-01-PLAN.md -- Score Trends Visualization (Phase 6 complete, all plans done)
 Resume file: None
