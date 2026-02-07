@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** A single place to see where I am in the 10-weekend program and what to do next -- simple enough that I actually use it.
-**Current focus:** Phase 2 complete: Weekend Overview (overview + detail pages). Ready for Phase 3 (Toggle Actions).
+**Current focus:** Phase 3 in progress: Core Interactions (Server Actions + utilities installed, wiring Client Components next).
 
 ## Current Position
 
-Phase: 2 of 6 (Weekend Overview)
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-02-07 -- Completed 02-02-PLAN.md (Weekend detail page with skeleton and 404 handling)
+Phase: 3 of 6 (Core Interactions)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-02-07 -- Completed 03-01-PLAN.md (Server Actions and utilities)
 
-Progress: [█████░░░░░░░░░░] 33% (5/15 plans)
+Progress: [██████░░░░░░░░░] 40% (6/15 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
+- Total plans completed: 6
 - Average duration: ~3 min
-- Total execution time: ~17 min
+- Total execution time: ~19 min
 
 **By Phase:**
 
@@ -29,10 +29,11 @@ Progress: [█████░░░░░░░░░░] 33% (5/15 plans)
 |-------|-------|-------|----------|
 | 01-foundation-data-layer | 3/3 | ~12 min | ~4 min |
 | 02-weekend-overview | 2/2 | ~5 min | ~2.5 min |
+| 03-core-interactions | 1/3 | ~2 min | ~2 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-02, 01-03, 02-01, 02-02
-- Trend: accelerating, ~2-3 min/plan
+- Last 5 plans: 01-03, 02-01, 02-02, 03-01
+- Trend: accelerating, ~2 min/plan
 
 *Updated after each plan completion*
 
@@ -65,6 +66,12 @@ Recent decisions affecting current work:
 - [02-02]: WeekendDetail type derived from NonNullable<Awaited<ReturnType<typeof getWeekendById>>> for schema sync
 - [02-02]: Advanced modifiers rendered inline with muted styling for visual de-emphasis
 - [02-02]: Next.js 16 async params pattern: params is Promise, must be awaited
+- [03-01]: react-markdown v10 (latest) instead of v9 -- current version, React 19 compatible
+- [03-01]: Custom debounce hook (35 lines) instead of use-debounce package -- avoids dependency for single use case
+- [03-01]: Zod v4 for Server Action input validation -- already a project dependency
+- [03-01]: Server Actions pattern: 'use server' directive, zod validation, revalidatePath after mutation
+- [03-01]: Atomic toggle: Drizzle not() for single-SQL boolean flip, no read-then-write
+- [03-01]: Derived completion: Weekend completedAt set/cleared based on core work item state
 
 ### Pending Todos
 
@@ -80,12 +87,15 @@ None.
 - **Database:** Neon Postgres with 11 weekends, 80 work items, 11 done criteria
 - **Design system:** Apple-minimalist tokens in src/app/globals.css
 - **Query layer:** src/lib/queries.ts (getWeekendsWithProgress, getWeekendById)
+- **Mutation layer:** src/lib/actions.ts (toggleWorkItem, saveNotes)
+- **Debounce hook:** src/lib/hooks/use-debounce.ts (useDebouncedCallback)
 - **Overview page:** src/app/(dashboard)/page.tsx with loading skeleton
 - **Detail page:** src/app/(dashboard)/weekend/[id]/page.tsx with loading skeleton and 404 handling
 - **Detail components:** src/components/weekend/weekend-detail.tsx, work-item-list.tsx
+- **UI components:** badge, card, progress, skeleton, checkbox, textarea
 
 ## Session Continuity
 
-Last session: 2026-02-07T19:09Z
-Stopped at: Completed 02-02-PLAN.md -- Weekend detail page (Phase 2 complete)
+Last session: 2026-02-07T19:23Z
+Stopped at: Completed 03-01-PLAN.md -- Server Actions and utilities (Phase 3 plan 1 of 3)
 Resume file: None
