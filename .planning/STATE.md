@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** A single place to see where I am in the 10-weekend program and what to do next -- simple enough that I actually use it.
-**Current focus:** Phase 4 in progress: Weekly Scorecard data layer complete (schema, Server Actions, query). UI composition next in Plan 02.
+**Current focus:** Phase 4 complete: Weekly Scorecard fully built (data layer + UI composition). Ready for Phase 5 (Progress Dashboard).
 
 ## Current Position
 
-Phase: 4 of 6 (Weekly Scorecard)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-02-07 -- Completed 04-01-PLAN.md (Scorecard Data Layer + UI Primitives)
+Phase: 4 of 6 (Weekly Scorecard) -- COMPLETE
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-02-07 -- Completed 04-02-PLAN.md (Scorecard UI Composition)
 
-Progress: [█████████░░░░░░] 60% (9/15 plans)
+Progress: [██████████░░░░░] 67% (10/15 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
+- Total plans completed: 10
 - Average duration: ~3 min
-- Total execution time: ~26 min
+- Total execution time: ~28 min
 
 **By Phase:**
 
@@ -30,10 +30,10 @@ Progress: [█████████░░░░░░] 60% (9/15 plans)
 | 01-foundation-data-layer | 3/3 | ~12 min | ~4 min |
 | 02-weekend-overview | 2/2 | ~5 min | ~2.5 min |
 | 03-core-interactions | 2/2 | ~4 min | ~2 min |
-| 04-weekly-scorecard | 1/2 | ~3 min | ~3 min |
+| 04-weekly-scorecard | 2/2 | ~5 min | ~2.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02, 03-01, 03-02, 04-01
+- Last 5 plans: 03-01, 03-02, 04-01, 04-02
 - Trend: consistent ~2-3 min/plan
 
 *Updated after each plan completion*
@@ -81,6 +81,9 @@ Recent decisions affecting current work:
 - [04-01]: Strict zod enum for criterion values (outcome_quality, time_saved, repeatability, use_again)
 - [04-01]: Rating validated as integer 0-5 despite real DB column for star-rating semantics
 - [04-01]: onConflictDoUpdate upsert pattern for deduplication on composite keys
+- [04-02]: Math.round() on rating values from DB to handle real column returning floats
+- [04-02]: ScorecardNotesEditor follows exact NotesEditor pattern with 4 rows instead of 6
+- [04-02]: Locked state uses opacity-50 + Lock icon + explanatory text rather than hidden section
 
 ### Pending Todos
 
@@ -101,10 +104,11 @@ None.
 - **Overview page:** src/app/(dashboard)/page.tsx with loading skeleton
 - **Detail page:** src/app/(dashboard)/weekend/[id]/page.tsx with loading skeleton and 404 handling
 - **Detail components:** src/components/weekend/weekend-detail.tsx (Server), work-item-list.tsx (Client), work-item-row.tsx (Client), notes-editor.tsx (Client)
+- **Scorecard components:** rating-scale.tsx, use-again-toggle.tsx, scorecard-notes-editor.tsx, scorecard-section.tsx (all Client)
 - **UI components:** badge, card, progress, skeleton, checkbox, textarea, toggle-group, switch, label
 
 ## Session Continuity
 
-Last session: 2026-02-07T19:42Z
-Stopped at: Completed 04-01-PLAN.md -- Scorecard Data Layer + UI Primitives
+Last session: 2026-02-07T19:46Z
+Stopped at: Completed 04-02-PLAN.md -- Scorecard UI Composition (Phase 4 complete)
 Resume file: None
