@@ -93,12 +93,12 @@ Plans:
   3. Users can ignore the suggestion and pick any weekend freely
   4. Marking a weekend complete triggers a visible celebration animation
   5. The app has smooth animations on progress bar changes, page transitions, and state changes
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
-- [ ] 05-03: TBD
+- [ ] 05-01-PLAN.md -- Suggestion engine pure function and "Up Next" banner on overview page
+- [ ] 05-02-PLAN.md -- Install motion + canvas-confetti, celebration confetti on weekend completion
+- [ ] 05-03-PLAN.md -- Motion animations (progress bar spring, staggered cards, page enter transitions)
 
 ### Phase 6: Visualization & Production Hardening
 **Goal**: Users can see score trends across completed weekends, and the app is production-ready with proper error handling and performance
