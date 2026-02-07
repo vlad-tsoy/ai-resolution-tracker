@@ -1,4 +1,6 @@
-import { Progress } from "@/components/ui/progress";
+"use client";
+
+import { motion } from "motion/react";
 
 type ProgressOverviewProps = {
   completed: number;
@@ -18,11 +20,21 @@ export function ProgressOverview({ completed, total }: ProgressOverviewProps) {
           {completed}/{total} weekends &middot; {percent}%
         </span>
       </div>
-      <Progress
-        value={percent}
+      <div
+        className="bg-primary/20 relative h-2 w-full overflow-hidden rounded-full"
+        role="progressbar"
+        aria-valuenow={percent}
+        aria-valuemin={0}
+        aria-valuemax={100}
         aria-label={`${completed} of ${total} weekends completed`}
-        className="h-2"
-      />
+      >
+        <motion.div
+          className="bg-primary h-full rounded-full"
+          initial={{ width: 0 }}
+          animate={{ width: `${percent}%` }}
+          transition={{ type: "spring", visualDuration: 0.6, bounce: 0.15 }}
+        />
+      </div>
     </div>
   );
 }
