@@ -77,11 +77,11 @@ Plans:
   2. Scorecard ratings auto-save on change without requiring an explicit save action
   3. Each scorecard includes a free-text field for notes (best prompt, approach, what didn't work) that persists
   4. Uncompleted weekends do not show the scorecard (or show it as locked/disabled)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
+- [ ] 04-01-PLAN.md -- Schema changes (unique constraint + scorecardNotes column), Server Actions (saveRating, saveScorecardNotes), query update, shadcn/ui components
+- [ ] 04-02-PLAN.md -- Scorecard UI components (RatingScale, UseAgainToggle, ScorecardNotesEditor, ScorecardSection), conditional rendering in WeekendDetail
 
 ### Phase 5: Suggestion Engine & Polish
 **Goal**: Users get intelligent next-weekend recommendations and the app feels polished with purposeful animations
