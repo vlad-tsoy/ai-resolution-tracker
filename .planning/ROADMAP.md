@@ -125,10 +125,10 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 1. Foundation & Data Layer | 3/3 | Complete | 2026-02-07 |
 | 2. Weekend Overview | 2/2 | Complete | 2026-02-07 |
 | 3. Core Interactions | 2/2 | Complete | 2026-02-07 |
-| 4. Weekly Scorecard | 0/2 | Not started | - |
+| 4. Weekly Scorecard | 2/2 | Complete | 2026-02-07 |
 | 5. Suggestion Engine & Polish | 0/3 | Not started | - |
 | 6. Visualization & Production Hardening | 0/2 | Not started | - |
 
 ---
 *Roadmap created: 2026-02-07*
-*Last updated: 2026-02-07 -- Phase 3 complete*
+*Last updated: 2026-02-07 -- Phase 4 complete*

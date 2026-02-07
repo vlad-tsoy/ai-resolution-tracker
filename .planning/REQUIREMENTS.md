@@ -127,11 +127,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | NOTES-01 | Phase 3 | Complete |
 | NOTES-02 | Phase 3 | Complete |
 | NOTES-03 | Phase 3 | Complete |
-| SCORE-01 | Phase 4 | Pending |
-| SCORE-02 | Phase 4 | Pending |
-| SCORE-03 | Phase 4 | Pending |
-| SCORE-04 | Phase 4 | Pending |
-| SCORE-05 | Phase 4 | Pending |
+| SCORE-01 | Phase 4 | Complete |
+| SCORE-02 | Phase 4 | Complete |
+| SCORE-03 | Phase 4 | Complete |
+| SCORE-04 | Phase 4 | Complete |
+| SCORE-05 | Phase 4 | Complete |
 | VIZ-01 | Phase 6 | Pending |
 | VIZ-02 | Phase 6 | Pending |
 | VIZ-03 | Phase 6 | Pending |
@@ -156,4 +156,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-07*
-*Last updated: 2026-02-07 after Phase 3 completion*
+*Last updated: 2026-02-07 after Phase 4 completion*
