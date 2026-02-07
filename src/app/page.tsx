@@ -1,18 +1,26 @@
 import { db } from "@/lib/db";
-import { weekends } from "@/db/schema";
+import { weekends, workItems, doneCriteria } from "@/db/schema";
+import { count } from "drizzle-orm";
 
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const allWeekends = await db.select().from(weekends);
+  const weekendCount = await db.select({ count: count() }).from(weekends);
+  const workItemCount = await db.select({ count: count() }).from(workItems);
+  const doneCriteriaCount = await db
+    .select({ count: count() })
+    .from(doneCriteria);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4 bg-zinc-50 dark:bg-black">
-      <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">
-        AI Resolution Tracker
+    <main className="p-8">
+      <h1 className="text-2xl font-bold">
+        AI Resolution Tracker — Seed Verification
       </h1>
-      <p className="text-lg text-zinc-600 dark:text-zinc-400">
-        Database connected. Weekends in DB: {allWeekends.length}
-      </p>
+      <ul className="mt-4 space-y-1">
+        <li>Weekends: {weekendCount[0].count} (expected: 11)</li>
+        <li>Work Items: {workItemCount[0].count} (expected: ~55-65)</li>
+        <li>Done Criteria: {doneCriteriaCount[0].count} (expected: 11)</li>
+      </ul>
     </main>
   );
 }
