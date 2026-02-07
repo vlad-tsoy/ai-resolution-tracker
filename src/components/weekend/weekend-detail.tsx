@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, Circle } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Circle, Lock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { WorkItemList } from "@/components/weekend/work-item-list";
 import { NotesEditor } from "@/components/weekend/notes-editor";
+import { ScorecardSection } from "@/components/weekend/scorecard-section";
 import type { getWeekendById } from "@/lib/queries";
 
 type WeekendData = NonNullable<Awaited<ReturnType<typeof getWeekendById>>>;
@@ -89,6 +90,25 @@ export function WeekendDetail({ weekend }: WeekendDetailProps) {
 
       {/* Notes Editor */}
       <NotesEditor weekendId={weekend.id} initialNotes={weekend.notes} />
+
+      {/* Scorecard */}
+      {weekend.completedAt ? (
+        <ScorecardSection
+          weekendId={weekend.id}
+          ratings={weekend.scorecardRatings}
+          scorecardNotes={weekend.scorecardNotes}
+        />
+      ) : (
+        <section className="space-y-3 opacity-50">
+          <div className="flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight">Scorecard</h2>
+            <Lock className="h-4 w-4 text-muted-foreground" />
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Complete all core work items to unlock the scorecard.
+          </p>
+        </section>
+      )}
     </article>
   );
 }
