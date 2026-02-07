@@ -109,11 +109,11 @@ Plans:
   2. The visualization updates automatically as more weekends are completed and scored
   3. The app has no console errors in production, with proper error handling for database connectivity issues
   4. Initial page load is under 3 seconds on a standard connection
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 06-01: TBD
-- [ ] 06-02: TBD
+- [ ] 06-01-PLAN.md -- Score trends visualization (aggregation query, grouped bar chart, lazy-loaded on overview page)
+- [ ] 06-02-PLAN.md -- Production hardening (error boundaries, 404 page, global error handler, build verification)
 
 ## Progress
 
