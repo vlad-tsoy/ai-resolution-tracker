@@ -1,6 +1,6 @@
 import { db } from "@/lib/db";
-import { eq } from "drizzle-orm";
-import { weekends } from "@/db/schema";
+import { eq, isNotNull, sql } from "drizzle-orm";
+import { scorecardRatings, weekends } from "@/db/schema";
 
 /**
  * Fetch all weekends with work items for progress display.
@@ -37,4 +37,24 @@ export async function getWeekendById(id: number) {
       scorecardRatings: true,
     },
   });
+}
+
+/**
+ * Fetch average scorecard ratings grouped by weekend and criterion.
+ * Uses the SQL builder API (not relational) for aggregation support.
+ * Only includes completed weekends.
+ */
+export async function getScorecardAverages() {
+  return db
+    .select({
+      weekendNumber: weekends.number,
+      weekendName: weekends.name,
+      criterion: scorecardRatings.criterion,
+      avgRating: sql<number>`cast(avg(${scorecardRatings.rating}) as float)`,
+    })
+    .from(scorecardRatings)
+    .innerJoin(weekends, eq(scorecardRatings.weekendId, weekends.id))
+    .where(isNotNull(weekends.completedAt))
+    .groupBy(weekends.number, weekends.name, scorecardRatings.criterion)
+    .orderBy(weekends.number);
 }
