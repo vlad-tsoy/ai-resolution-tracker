@@ -47,12 +47,11 @@ Plans:
   3. An overall progress bar shows the completion percentage across all 10 weekends
   4. Clicking a weekend opens a detail view showing full info: deliverable, core work items, advanced modifiers (marked as optional), "why it matters", and "done when" criteria
   5. The layout works well on both mobile and desktop, with skeleton loading states during data fetches
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
+- [ ] 02-01-PLAN.md -- Query layer, overview page with category-grouped grid, progress bar, weekend cards, skeleton loading
+- [ ] 02-02-PLAN.md -- Weekend detail page with full info display, back navigation, 404 handling, skeleton loading
 
 ### Phase 3: Core Interactions
 **Goal**: Users can track their progress by checking off work items and capturing reflections -- the core CRUD loop that makes the app useful
@@ -125,7 +124,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Data Layer | 0/3 | Not started | - |
-| 2. Weekend Overview | 0/3 | Not started | - |
+| 2. Weekend Overview | 0/2 | Not started | - |
 | 3. Core Interactions | 0/3 | Not started | - |
 | 4. Weekly Scorecard | 0/2 | Not started | - |
 | 5. Suggestion Engine & Polish | 0/3 | Not started | - |
