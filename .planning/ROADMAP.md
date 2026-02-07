@@ -30,12 +30,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. The database contains all 10 weekends plus the bonus weekend with their full content (name, deliverable, core work items, advanced modifiers, "why it matters", "done when" criteria, category)
   3. The app uses Apple-inspired design tokens (clean typography, neutral palette, generous whitespace) visible on the landing page
   4. Data persists in Neon Postgres and is accessible from any device via the deployed URL
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
-- [ ] 01-03: TBD
+- [ ] 01-01-PLAN.md -- Project scaffolding, Drizzle + Neon setup, database schema, push to Neon
+- [ ] 01-02-PLAN.md -- Seed script with all 11 weekends of actual PDF content
+- [ ] 01-03-PLAN.md -- Apple-inspired design system, landing page, Vercel deployment
 
 ### Phase 2: Weekend Overview
 **Goal**: Users can browse all 10 weekends, see their current progress, and drill into full weekend details -- the complete read path
