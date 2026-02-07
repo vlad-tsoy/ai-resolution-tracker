@@ -1,7 +1,7 @@
 "use server";
 
 import { db } from "@/lib/db";
-import { workItems, weekends } from "@/db/schema";
+import { workItems, weekends, scorecardRatings } from "@/db/schema";
 import { eq, not } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
@@ -60,6 +60,58 @@ export async function saveNotes(weekendId: number, notes: string) {
     .update(weekends)
     .set({
       notes: parsed.notes,
+      updatedAt: new Date(),
+    })
+    .where(eq(weekends.id, parsed.weekendId));
+
+  revalidatePath(`/weekend/${parsed.weekendId}`);
+}
+
+// --- Save Scorecard Rating ---
+
+const VALID_CRITERIA = ['outcome_quality', 'time_saved', 'repeatability', 'use_again'] as const;
+
+const saveRatingSchema = z.object({
+  weekendId: z.number().int().positive(),
+  criterion: z.enum(VALID_CRITERIA),
+  rating: z.number().int().min(0).max(5),
+});
+
+export async function saveRating(weekendId: number, criterion: string, rating: number) {
+  const parsed = saveRatingSchema.parse({ weekendId, criterion, rating });
+
+  await db
+    .insert(scorecardRatings)
+    .values({
+      weekendId: parsed.weekendId,
+      criterion: parsed.criterion,
+      rating: parsed.rating,
+    })
+    .onConflictDoUpdate({
+      target: [scorecardRatings.weekendId, scorecardRatings.criterion],
+      set: {
+        rating: parsed.rating,
+        updatedAt: new Date(),
+      },
+    });
+
+  revalidatePath(`/weekend/${parsed.weekendId}`);
+}
+
+// --- Save Scorecard Notes ---
+
+const saveScorecardNotesSchema = z.object({
+  weekendId: z.number().int().positive(),
+  notes: z.string().max(50000),
+});
+
+export async function saveScorecardNotes(weekendId: number, notes: string) {
+  const parsed = saveScorecardNotesSchema.parse({ weekendId, notes });
+
+  await db
+    .update(weekends)
+    .set({
+      scorecardNotes: parsed.notes,
       updatedAt: new Date(),
     })
     .where(eq(weekends.id, parsed.weekendId));

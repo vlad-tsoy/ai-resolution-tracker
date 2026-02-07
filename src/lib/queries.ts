@@ -34,6 +34,7 @@ export async function getWeekendById(id: number) {
       doneCriteria: {
         orderBy: (doneCriteria, { asc }) => [asc(doneCriteria.sortOrder)],
       },
+      scorecardRatings: true,
     },
   });
 }
