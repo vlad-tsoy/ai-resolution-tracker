@@ -7,6 +7,7 @@ import {
   boolean,
   timestamp,
   real,
+  unique,
 } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 
@@ -27,6 +28,7 @@ export const weekends = pgTable("weekends", {
   category: categoryEnum("category").notNull(),
   isBonus: boolean("is_bonus").default(false).notNull(),
   notes: text("notes"),
+  scorecardNotes: text("scorecard_notes"),
   completedAt: timestamp("completed_at", { withTimezone: true }),
   createdAt: timestamp("created_at", { withTimezone: true })
     .defaultNow()
@@ -100,7 +102,9 @@ export const scorecardRatings = pgTable("scorecard_ratings", {
   updatedAt: timestamp("updated_at", { withTimezone: true })
     .defaultNow()
     .notNull(),
-});
+}, (t) => [
+  unique("scorecard_ratings_weekend_criterion").on(t.weekendId, t.criterion),
+]);
 
 export const scorecardRatingsRelations = relations(
   scorecardRatings,
