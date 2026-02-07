@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-02-07)
 ## Current Position
 
 Phase: 1 of 6 (Foundation & Data Layer)
-Plan: 0 of 3 in current phase
-Status: Ready to plan
-Last activity: 2026-02-07 -- Roadmap created with 6 phases covering 36 requirements
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-02-07 -- Completed 01-01-PLAN.md (Project scaffolding, schema, Neon push)
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█░░░░░░░░░] ~7%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: --
-- Total execution time: 0 hours
+- Total plans completed: 1
+- Average duration: ~1 min (Task 3 only; Tasks 1-2 in prior session)
+- Total execution time: ~1 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 01-foundation-data-layer | 1/3 | ~1 min | ~1 min |
 
 **Recent Trend:**
-- Last 5 plans: --
+- Last 5 plans: 01-01
 - Trend: --
 
 *Updated after each plan completion*
@@ -44,17 +44,22 @@ Recent decisions affecting current work:
 
 - [Roadmap]: Server-first architecture (Server Components + Server Actions) established from Phase 1, not retrofitted later
 - [Roadmap]: Neon Postgres + Drizzle ORM chosen over Supabase/Prisma for serverless performance and scale-to-zero
+- [01-01]: Used shadcn/ui Nova style with Zinc base color for Apple-inspired aesthetic
+- [01-01]: Used @neondatabase/serverless HTTP driver (not pg) for serverless-compatible connection
+- [01-01]: Used generatedAlwaysAsIdentity() instead of deprecated serial() for primary keys
+- [01-01]: Used drizzle-kit push workflow (no migration files) for initial development
+- [01-01]: Defined pgEnum for weekend categories to enforce valid values at database level
 
 ### Pending Todos
 
-None yet.
+None.
 
 ### Blockers/Concerns
 
-None yet.
+None.
 
 ## Session Continuity
 
-Last session: 2026-02-07
-Stopped at: Roadmap created, ready to plan Phase 1
+Last session: 2026-02-07T07:40Z
+Stopped at: Completed 01-01-PLAN.md
 Resume file: None
