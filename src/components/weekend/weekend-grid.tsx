@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import { CategorySection } from "./category-section";
 import { WeekendCard, type WeekendWithWorkItems } from "./weekend-card";
 
@@ -36,7 +39,12 @@ export function WeekendGrid({ weekends }: WeekendGridProps) {
         <section>
           <h2 className="text-lg font-semibold tracking-tight mb-4">Bonus</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <WeekendCard weekend={bonusWeekend} />
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <WeekendCard weekend={bonusWeekend} />
+            </motion.div>
           </div>
         </section>
       )}
