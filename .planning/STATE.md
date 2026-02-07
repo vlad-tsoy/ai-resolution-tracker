@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-02-07)
 ## Current Position
 
 Phase: 1 of 6 (Foundation & Data Layer)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-02-07 -- Completed 01-01-PLAN.md (Project scaffolding, schema, Neon push)
+Last activity: 2026-02-07 -- Completed 01-02-PLAN.md (Seed database with all 11 weekends of PDF content)
 
-Progress: [█░░░░░░░░░] ~7%
+Progress: [██░░░░░░░░] ~14%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: ~1 min (Task 3 only; Tasks 1-2 in prior session)
-- Total execution time: ~1 min
+- Total plans completed: 2
+- Average duration: ~2 min
+- Total execution time: ~4 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-foundation-data-layer | 1/3 | ~1 min | ~1 min |
+| 01-foundation-data-layer | 2/3 | ~4 min | ~2 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01
+- Last 5 plans: 01-01, 01-02
 - Trend: --
 
 *Updated after each plan completion*
@@ -49,6 +49,9 @@ Recent decisions affecting current work:
 - [01-01]: Used generatedAlwaysAsIdentity() instead of deprecated serial() for primary keys
 - [01-01]: Used drizzle-kit push workflow (no migration files) for initial development
 - [01-01]: Defined pgEnum for weekend categories to enforce valid values at database level
+- [01-02]: Standalone Neon+Drizzle connection in seed script (not importing lib/db.ts) for tsx execution outside Next.js
+- [01-02]: Identity sequences reset with COALESCE(MAX(id), 1) after seeding
+- [01-02]: Bonus weekend stored as number=11, isBonus=true
 
 ### Pending Todos
 
@@ -60,6 +63,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-07T07:40Z
-Stopped at: Completed 01-01-PLAN.md
+Last session: 2026-02-07T07:46Z
+Stopped at: Completed 01-02-PLAN.md
 Resume file: None
