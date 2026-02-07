@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** A single place to see where I am in the 10-weekend program and what to do next -- simple enough that I actually use it.
-**Current focus:** Phase 5 complete: Suggestion engine, celebration confetti, and micro-animations all shipped. Ready for Phase 6 (Deployment & Launch).
+**Current focus:** Phase 6 in progress: Error boundaries and production hardening shipped. Chart visualization (06-01) pending.
 
 ## Current Position
 
-Phase: 5 of 6 (Suggestion Engine & Polish)
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-02-07 -- Completed 05-03-PLAN.md (Micro-Animations)
+Phase: 6 of 6 (Visualization & Production Hardening)
+Plan: 2 of 2 in current phase (06-01 pending)
+Status: In progress
+Last activity: 2026-02-07 -- Completed 06-02-PLAN.md (Error Boundaries & Production Build)
 
-Progress: [████████████░░] 86% (12/14 plans)
+Progress: [█████████████░] 93% (13/14 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
+- Total plans completed: 13
 - Average duration: ~3 min
-- Total execution time: ~33 min
+- Total execution time: ~34 min
 
 **By Phase:**
 
@@ -32,9 +32,10 @@ Progress: [████████████░░] 86% (12/14 plans)
 | 03-core-interactions | 2/2 | ~4 min | ~2 min |
 | 04-weekly-scorecard | 2/2 | ~5 min | ~2.5 min |
 | 05-suggestion-engine-polish | 3/3 | ~5 min | ~1.7 min |
+| 06-visualization-production-hardening | 1/2 | ~1 min | ~1 min |
 
 **Recent Trend:**
-- Last 5 plans: 04-02, 05-01, 05-02, 05-03
+- Last 5 plans: 05-01, 05-02, 05-03, 06-02
 - Trend: consistent ~1-2 min/plan
 
 *Updated after each plan completion*
@@ -95,6 +96,9 @@ Recent decisions affecting current work:
 - [05-03]: CategorySection converted to Client Component for stagger variants; WeekendCard stays Server Component
 - [05-03]: template.tsx for enter-only page transitions -- no exit animations (known App Router limitation)
 - [05-03]: Subtle animation values: y:12 for cards, y:8 for page, duration 0.3s -- felt not seen
+- [06-02]: Hardcoded zinc colors in global-error.tsx since CSS variables may not be available when root layout errors
+- [06-02]: not-found.tsx as Server Component (no use client) since it needs no interactivity
+- [06-02]: useEffect error logging in error boundaries for debugging without exposing raw errors to users
 
 ### Pending Todos
 
@@ -117,6 +121,8 @@ None.
 - **Overview page:** src/app/(dashboard)/page.tsx with suggestion banner and loading skeleton
 - **Detail page:** src/app/(dashboard)/weekend/[id]/page.tsx with loading skeleton and 404 handling
 - **Page transitions:** src/app/(dashboard)/template.tsx (enter-only fade+slide via motion)
+- **Error boundaries:** src/app/(dashboard)/error.tsx (dashboard), src/app/(dashboard)/weekend/[id]/error.tsx (detail), src/app/global-error.tsx (root)
+- **404 page:** src/app/not-found.tsx (styled with back navigation)
 - **Detail components:** src/components/weekend/weekend-detail.tsx (Server), work-item-list.tsx (Client), work-item-row.tsx (Client), notes-editor.tsx (Client)
 - **Suggestion banner:** src/components/weekend/suggested-weekend-banner.tsx (Server)
 - **Scorecard components:** rating-scale.tsx, use-again-toggle.tsx, scorecard-notes-editor.tsx, scorecard-section.tsx (all Client)
@@ -126,6 +132,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-07T21:20Z
-Stopped at: Completed 05-03-PLAN.md -- Micro-Animations (Phase 5 complete, 3 of 3)
+Last session: 2026-02-07T21:59Z
+Stopped at: Completed 06-02-PLAN.md -- Error Boundaries & Production Build (Plan 2 of 2 in Phase 6)
 Resume file: None
