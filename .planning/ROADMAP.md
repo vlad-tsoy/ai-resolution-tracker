@@ -62,12 +62,11 @@ Plans:
   2. A weekend is automatically marked complete when all its core work items are checked
   3. Each weekend has a free-text notes field that auto-saves without an explicit save button
   4. Notes support basic formatting (markdown or rich text) and persist across sessions
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
-- [ ] 03-03: TBD
+- [ ] 03-01-PLAN.md -- Install dependencies, Server Actions (toggleWorkItem, saveNotes), debounce hook
+- [ ] 03-02-PLAN.md -- Interactive checkboxes (optimistic UI), notes editor (auto-save + markdown preview), update detail page
 
 ### Phase 4: Weekly Scorecard
 **Goal**: Users can rate completed weekends on four dimensions to build a personal evaluation record
@@ -125,7 +124,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 |-------|----------------|--------|-----------|
 | 1. Foundation & Data Layer | 3/3 | Complete | 2026-02-07 |
 | 2. Weekend Overview | 0/2 | Not started | - |
-| 3. Core Interactions | 0/3 | Not started | - |
+| 3. Core Interactions | 0/2 | Not started | - |
 | 4. Weekly Scorecard | 0/2 | Not started | - |
 | 5. Suggestion Engine & Polish | 0/3 | Not started | - |
 | 6. Visualization & Production Hardening | 0/2 | Not started | - |
