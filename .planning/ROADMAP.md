@@ -13,8 +13,8 @@ This roadmap delivers a personal 10-weekend AI Resolution tracker from empty rep
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Data Layer** - Project scaffolding, Neon Postgres schema, seed data, design system, initial Vercel deploy
-- [ ] **Phase 2: Weekend Overview** - Read path displaying all weekends, detail views, progress bar, category grouping, responsive layout
-- [ ] **Phase 3: Core Interactions** - Write path with completion checkboxes, auto-saving notes, and weekend completion logic
+- [x] **Phase 2: Weekend Overview** - Read path displaying all weekends, detail views, progress bar, category grouping, responsive layout
+- [x] **Phase 3: Core Interactions** - Write path with completion checkboxes, auto-saving notes, and weekend completion logic
 - [ ] **Phase 4: Weekly Scorecard** - Rating system with mixed input types for evaluating completed weekends
 - [ ] **Phase 5: Suggestion Engine & Polish** - Next-weekend recommendation algorithm, animations, and completion celebration
 - [ ] **Phase 6: Visualization & Production Hardening** - Scorecard charts, error handling, performance optimization, production readiness
@@ -65,8 +65,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md -- Install dependencies, Server Actions (toggleWorkItem, saveNotes), debounce hook
-- [ ] 03-02-PLAN.md -- Interactive checkboxes (optimistic UI), notes editor (auto-save + markdown preview), update detail page
+- [x] 03-01-PLAN.md -- Install dependencies, Server Actions (toggleWorkItem, saveNotes), debounce hook
+- [x] 03-02-PLAN.md -- Interactive checkboxes (optimistic UI), notes editor (auto-save + markdown preview), update detail page
 
 ### Phase 4: Weekly Scorecard
 **Goal**: Users can rate completed weekends on four dimensions to build a personal evaluation record
@@ -124,11 +124,11 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 |-------|----------------|--------|-----------|
 | 1. Foundation & Data Layer | 3/3 | Complete | 2026-02-07 |
 | 2. Weekend Overview | 2/2 | Complete | 2026-02-07 |
-| 3. Core Interactions | 0/2 | Not started | - |
+| 3. Core Interactions | 2/2 | Complete | 2026-02-07 |
 | 4. Weekly Scorecard | 0/2 | Not started | - |
 | 5. Suggestion Engine & Polish | 0/3 | Not started | - |
 | 6. Visualization & Production Hardening | 0/2 | Not started | - |
 
 ---
 *Roadmap created: 2026-02-07*
-*Last updated: 2026-02-07 -- Phase 2 complete*
+*Last updated: 2026-02-07 -- Phase 3 complete*

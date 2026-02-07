@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** A single place to see where I am in the 10-weekend program and what to do next -- simple enough that I actually use it.
-**Current focus:** Phase 3 in progress: Core Interactions (Server Actions + utilities installed, wiring Client Components next).
+**Current focus:** Phase 3 complete: Core Interactions done (Server Actions, interactive checkboxes, auto-saving notes). Ready for Phase 4 planning.
 
 ## Current Position
 
 Phase: 3 of 6 (Core Interactions)
-Plan: 1 of 3 in current phase
-Status: In progress
-Last activity: 2026-02-07 -- Completed 03-01-PLAN.md (Server Actions and utilities)
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-02-07 -- Completed 03-02-PLAN.md (Interactive Client Components)
 
-Progress: [██████░░░░░░░░░] 40% (6/15 plans)
+Progress: [████████░░░░░░░] 53% (8/15 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
+- Total plans completed: 8
 - Average duration: ~3 min
-- Total execution time: ~19 min
+- Total execution time: ~23 min
 
 **By Phase:**
 
@@ -29,10 +29,10 @@ Progress: [██████░░░░░░░░░] 40% (6/15 plans)
 |-------|-------|-------|----------|
 | 01-foundation-data-layer | 3/3 | ~12 min | ~4 min |
 | 02-weekend-overview | 2/2 | ~5 min | ~2.5 min |
-| 03-core-interactions | 1/3 | ~2 min | ~2 min |
+| 03-core-interactions | 2/2 | ~4 min | ~2 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-03, 02-01, 02-02, 03-01
+- Last 5 plans: 02-01, 02-02, 03-01, 03-02
 - Trend: accelerating, ~2 min/plan
 
 *Updated after each plan completion*
@@ -72,6 +72,10 @@ Recent decisions affecting current work:
 - [03-01]: Server Actions pattern: 'use server' directive, zod validation, revalidatePath after mutation
 - [03-01]: Atomic toggle: Drizzle not() for single-SQL boolean flip, no read-then-write
 - [03-01]: Derived completion: Weekend completedAt set/cleared based on core work item state
+- [03-02]: WorkItemRow and WorkItemList are Client Components for useOptimistic/useTransition hooks
+- [03-02]: WeekendDetail stays a Server Component, passes data to Client children
+- [03-02]: Section headings moved from WorkItemList to WeekendDetail for cleaner separation
+- [03-02]: Done criteria remain read-only icons, not interactive checkboxes
 
 ### Pending Todos
 
@@ -91,11 +95,11 @@ None.
 - **Debounce hook:** src/lib/hooks/use-debounce.ts (useDebouncedCallback)
 - **Overview page:** src/app/(dashboard)/page.tsx with loading skeleton
 - **Detail page:** src/app/(dashboard)/weekend/[id]/page.tsx with loading skeleton and 404 handling
-- **Detail components:** src/components/weekend/weekend-detail.tsx, work-item-list.tsx
+- **Detail components:** src/components/weekend/weekend-detail.tsx (Server), work-item-list.tsx (Client), work-item-row.tsx (Client), notes-editor.tsx (Client)
 - **UI components:** badge, card, progress, skeleton, checkbox, textarea
 
 ## Session Continuity
 
-Last session: 2026-02-07T19:23Z
-Stopped at: Completed 03-01-PLAN.md -- Server Actions and utilities (Phase 3 plan 1 of 3)
+Last session: 2026-02-07T19:28Z
+Stopped at: Completed 03-02-PLAN.md -- Interactive Client Components (Phase 3 complete)
 Resume file: None
