@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** A single place to see where I am in the 10-weekend program and what to do next -- simple enough that I actually use it.
-**Current focus:** Phase 3 complete: Core Interactions done (Server Actions, interactive checkboxes, auto-saving notes). Ready for Phase 4 planning.
+**Current focus:** Phase 4 in progress: Weekly Scorecard data layer complete (schema, Server Actions, query). UI composition next in Plan 02.
 
 ## Current Position
 
-Phase: 3 of 6 (Core Interactions)
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-02-07 -- Completed 03-02-PLAN.md (Interactive Client Components)
+Phase: 4 of 6 (Weekly Scorecard)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-02-07 -- Completed 04-01-PLAN.md (Scorecard Data Layer + UI Primitives)
 
-Progress: [████████░░░░░░░] 53% (8/15 plans)
+Progress: [█████████░░░░░░] 60% (9/15 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: ~3 min
-- Total execution time: ~23 min
+- Total execution time: ~26 min
 
 **By Phase:**
 
@@ -30,10 +30,11 @@ Progress: [████████░░░░░░░] 53% (8/15 plans)
 | 01-foundation-data-layer | 3/3 | ~12 min | ~4 min |
 | 02-weekend-overview | 2/2 | ~5 min | ~2.5 min |
 | 03-core-interactions | 2/2 | ~4 min | ~2 min |
+| 04-weekly-scorecard | 1/2 | ~3 min | ~3 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-01, 02-02, 03-01, 03-02
-- Trend: accelerating, ~2 min/plan
+- Last 5 plans: 02-02, 03-01, 03-02, 04-01
+- Trend: consistent ~2-3 min/plan
 
 *Updated after each plan completion*
 
@@ -76,6 +77,10 @@ Recent decisions affecting current work:
 - [03-02]: WeekendDetail stays a Server Component, passes data to Client children
 - [03-02]: Section headings moved from WorkItemList to WeekendDetail for cleaner separation
 - [03-02]: Done criteria remain read-only icons, not interactive checkboxes
+- [04-01]: Drizzle third-arg callback pattern for composite unique constraint on scorecardRatings
+- [04-01]: Strict zod enum for criterion values (outcome_quality, time_saved, repeatability, use_again)
+- [04-01]: Rating validated as integer 0-5 despite real DB column for star-rating semantics
+- [04-01]: onConflictDoUpdate upsert pattern for deduplication on composite keys
 
 ### Pending Todos
 
@@ -88,18 +93,18 @@ None.
 ## Key Artifacts
 
 - **Production URL:** https://ai-resolution.vercel.app
-- **Database:** Neon Postgres with 11 weekends, 80 work items, 11 done criteria
+- **Database:** Neon Postgres with 11 weekends, 80 work items, 11 done criteria, unique constraint on scorecard_ratings
 - **Design system:** Apple-minimalist tokens in src/app/globals.css
-- **Query layer:** src/lib/queries.ts (getWeekendsWithProgress, getWeekendById)
-- **Mutation layer:** src/lib/actions.ts (toggleWorkItem, saveNotes)
+- **Query layer:** src/lib/queries.ts (getWeekendsWithProgress, getWeekendById with scorecardRatings)
+- **Mutation layer:** src/lib/actions.ts (toggleWorkItem, saveNotes, saveRating, saveScorecardNotes)
 - **Debounce hook:** src/lib/hooks/use-debounce.ts (useDebouncedCallback)
 - **Overview page:** src/app/(dashboard)/page.tsx with loading skeleton
 - **Detail page:** src/app/(dashboard)/weekend/[id]/page.tsx with loading skeleton and 404 handling
 - **Detail components:** src/components/weekend/weekend-detail.tsx (Server), work-item-list.tsx (Client), work-item-row.tsx (Client), notes-editor.tsx (Client)
-- **UI components:** badge, card, progress, skeleton, checkbox, textarea
+- **UI components:** badge, card, progress, skeleton, checkbox, textarea, toggle-group, switch, label
 
 ## Session Continuity
 
-Last session: 2026-02-07T19:28Z
-Stopped at: Completed 03-02-PLAN.md -- Interactive Client Components (Phase 3 complete)
+Last session: 2026-02-07T19:42Z
+Stopped at: Completed 04-01-PLAN.md -- Scorecard Data Layer + UI Primitives
 Resume file: None
