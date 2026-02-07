@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { CheckCircle2, Circle } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Circle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { WorkItemList } from "@/components/weekend/work-item-list";
+import { NotesEditor } from "@/components/weekend/notes-editor";
 import type { getWeekendById } from "@/lib/queries";
 
 type WeekendData = NonNullable<Awaited<ReturnType<typeof getWeekendById>>>;
@@ -36,7 +36,10 @@ export function WeekendDetail({ weekend }: WeekendDetailProps) {
       </header>
 
       {/* Core Work Items */}
-      <WorkItemList items={coreItems} title="Core Work" />
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold tracking-tight">Core Work</h2>
+        <WorkItemList items={coreItems} />
+      </section>
 
       {/* Advanced Modifiers */}
       {advancedItems.length > 0 && (
@@ -47,18 +50,7 @@ export function WeekendDetail({ weekend }: WeekendDetailProps) {
             </h2>
             <Badge variant="outline">Optional</Badge>
           </div>
-          <ul className="space-y-2">
-            {advancedItems.map((item) => (
-              <li key={item.id} className="flex items-start gap-2.5">
-                {item.isCompleted ? (
-                  <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
-                ) : (
-                  <Circle className="h-4 w-4 mt-0.5 shrink-0" />
-                )}
-                <span className="text-sm leading-relaxed">{item.title}</span>
-              </li>
-            ))}
-          </ul>
+          <WorkItemList items={advancedItems} />
         </section>
       )}
 
@@ -94,6 +86,9 @@ export function WeekendDetail({ weekend }: WeekendDetailProps) {
           </ul>
         </section>
       )}
+
+      {/* Notes Editor */}
+      <NotesEditor weekendId={weekend.id} initialNotes={weekend.notes} />
     </article>
   );
 }
