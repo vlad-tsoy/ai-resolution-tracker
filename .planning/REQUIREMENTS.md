@@ -1,7 +1,7 @@
 # Requirements: AI Resolution Tracker
 
 **Defined:** 2026-02-07
-**Core Value:** A single place to see where I am in the 10-weekend program and what to do next — simple enough that I actually use it.
+**Core Value:** A single place to see where I am in the 10-weekend program and what to do next -- simple enough that I actually use it.
 
 ## v1 Requirements
 
@@ -57,10 +57,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Design & Polish
 
-- [ ] **UI-01**: Apple-inspired minimalist design — clean typography, generous whitespace, neutral palette
+- [ ] **UI-01**: Apple-inspired minimalist design -- clean typography, generous whitespace, neutral palette
 - [ ] **UI-02**: Subtle animations and transitions using Motion library
 - [ ] **UI-03**: Completion celebration visual when marking a weekend complete
-- [ ] **UI-04**: Responsive design — works well on mobile and desktop
+- [ ] **UI-04**: Responsive design -- works well on mobile and desktop
 - [ ] **UI-05**: Loading states with skeleton UI during data fetches
 - [ ] **UI-06**: Use frontend-design skill for high-quality UI implementation
 
@@ -112,48 +112,48 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DATA-01 | TBD | Pending |
-| DATA-02 | TBD | Pending |
-| DATA-03 | TBD | Pending |
-| LIST-01 | TBD | Pending |
-| LIST-02 | TBD | Pending |
-| LIST-03 | TBD | Pending |
-| LIST-04 | TBD | Pending |
-| LIST-05 | TBD | Pending |
-| DETAIL-01 | TBD | Pending |
-| DETAIL-02 | TBD | Pending |
-| DETAIL-03 | TBD | Pending |
-| DETAIL-04 | TBD | Pending |
-| NOTES-01 | TBD | Pending |
-| NOTES-02 | TBD | Pending |
-| NOTES-03 | TBD | Pending |
-| SCORE-01 | TBD | Pending |
-| SCORE-02 | TBD | Pending |
-| SCORE-03 | TBD | Pending |
-| SCORE-04 | TBD | Pending |
-| SCORE-05 | TBD | Pending |
-| VIZ-01 | TBD | Pending |
-| VIZ-02 | TBD | Pending |
-| VIZ-03 | TBD | Pending |
-| SUGGEST-01 | TBD | Pending |
-| SUGGEST-02 | TBD | Pending |
-| SUGGEST-03 | TBD | Pending |
-| SUGGEST-04 | TBD | Pending |
-| UI-01 | TBD | Pending |
-| UI-02 | TBD | Pending |
-| UI-03 | TBD | Pending |
-| UI-04 | TBD | Pending |
-| UI-05 | TBD | Pending |
-| UI-06 | TBD | Pending |
-| DEPLOY-01 | TBD | Pending |
-| DEPLOY-02 | TBD | Pending |
-| DEPLOY-03 | TBD | Pending |
+| DATA-01 | Phase 1 | Pending |
+| DATA-02 | Phase 1 | Pending |
+| DATA-03 | Phase 1 | Pending |
+| LIST-01 | Phase 2 | Pending |
+| LIST-02 | Phase 2 | Pending |
+| LIST-03 | Phase 2 | Pending |
+| LIST-04 | Phase 2 | Pending |
+| LIST-05 | Phase 2 | Pending |
+| DETAIL-01 | Phase 2 | Pending |
+| DETAIL-02 | Phase 3 | Pending |
+| DETAIL-03 | Phase 3 | Pending |
+| DETAIL-04 | Phase 2 | Pending |
+| NOTES-01 | Phase 3 | Pending |
+| NOTES-02 | Phase 3 | Pending |
+| NOTES-03 | Phase 3 | Pending |
+| SCORE-01 | Phase 4 | Pending |
+| SCORE-02 | Phase 4 | Pending |
+| SCORE-03 | Phase 4 | Pending |
+| SCORE-04 | Phase 4 | Pending |
+| SCORE-05 | Phase 4 | Pending |
+| VIZ-01 | Phase 6 | Pending |
+| VIZ-02 | Phase 6 | Pending |
+| VIZ-03 | Phase 6 | Pending |
+| SUGGEST-01 | Phase 5 | Pending |
+| SUGGEST-02 | Phase 5 | Pending |
+| SUGGEST-03 | Phase 5 | Pending |
+| SUGGEST-04 | Phase 5 | Pending |
+| UI-01 | Phase 1 | Pending |
+| UI-02 | Phase 5 | Pending |
+| UI-03 | Phase 5 | Pending |
+| UI-04 | Phase 2 | Pending |
+| UI-05 | Phase 2 | Pending |
+| UI-06 | Phase 1 | Pending |
+| DEPLOY-01 | Phase 1 | Pending |
+| DEPLOY-02 | Phase 6 | Pending |
+| DEPLOY-03 | Phase 6 | Pending |
 
 **Coverage:**
 - v1 requirements: 36 total
-- Mapped to phases: 0
-- Unmapped: 36
+- Mapped to phases: 36
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-07*
-*Last updated: 2026-02-07 after initial definition*
+*Last updated: 2026-02-07 after roadmap creation*
